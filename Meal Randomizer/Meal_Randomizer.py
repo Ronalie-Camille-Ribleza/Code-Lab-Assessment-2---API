@@ -32,7 +32,7 @@ icon = tk.Label(root,
 icon.grid(row = 0, column = 0, pady = 10, stick = "WE")
 title = tk.Label(text = "Meal Randomizer",
                  bg = "#F9EDCC",
-                 fg = "#EDAE49",
+                 fg = "#FD7168",
                  font = ("Ubuntu Bold", 80))
 title.grid(row = 1, column = 0, pady = 20, stick="WE")
 
