@@ -7,7 +7,6 @@ response = requests.get("https://www.themealdb.com/api/json/v1/1/random.php")
 entries = response.json()['meals']
 
 def randomMeal():
-    global meals
     for i in range(len(entries)):
         mealName = entries[i]["strMeal"] # retrieves the name of the meal
         print("Name:", mealName)
@@ -15,6 +14,8 @@ def randomMeal():
         print("Origin:", mealPlace)
         mealClass = entries[i]["strCategory"] # retrieves the category of the meal
         print("Category:", mealClass)
+        mealRecipe = entries[i]["strYoutube"]
+        print("Recipe:", mealRecipe)
 
 # user interface
 root = tk.Tk()
@@ -38,9 +39,6 @@ title.grid(row = 1, column = 0, pady = 20, stick="WE")
 
 # body
 for i in range(len(entries)):
-    if response.status_code == 200:
-        with open("strMealThumb", 'wb') as mealPic:
-            mealPic.write(response.content)
     mealName = entries[i]["strMeal"]
     nameLabel = tk.Label(text = f"Name: {mealName}",
                          bg = "#F9EDCC",
@@ -74,4 +72,6 @@ for i in range(len(entries)):
                    column = 0,
                    stick = "WE")
 
+root.resizable(0, 0)
+randomMeal()
 root.mainloop() # retains the screen until the program is closed
