@@ -72,6 +72,6 @@ for i in range(len(entries)):
                    column = 0,
                    stick = "WE")
 
-root.resizable(0, 0)
+root.resizable(False, False)
 randomMeal()
 root.mainloop() # retains the screen until the program is closed
