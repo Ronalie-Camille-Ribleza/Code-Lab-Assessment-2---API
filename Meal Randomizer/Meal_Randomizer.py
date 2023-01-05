@@ -17,7 +17,7 @@ def randomMeal():
 
 # user interface
 root = tk.Tk()
-windll.shcore.SetProcessDpiAwareness(1)
+windll.shcore.SetProcessDpiAwareness(1) # sets
 root.title("Meal Randomizer")
 root.config(padx = 60,
             pady = 60,
@@ -59,6 +59,13 @@ for i in range(len(entries)):
     classLabel.grid(row = 3,
                    column = 0,
                    stick = "WE")
+    mealRecipe = entries[i]["strYoutube"]
+    recipeLabel = tk.Label(text = f"Recipe: {mealRecipe}",
+                         bg = "#F9EDCC",
+                         fg = "#610F12",
+                         font = ("Ubuntu", 30))
+    recipeLabel.grid(row = 4,
+                   column = 0,
+                   stick = "WE")
 
-# Keep the screen open until exited
-root.mainloop()
+root.mainloop() # retains the screen until the program is closed
