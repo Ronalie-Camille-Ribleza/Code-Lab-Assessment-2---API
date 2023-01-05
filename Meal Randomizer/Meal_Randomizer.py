@@ -7,7 +7,6 @@ response = requests.get("https://www.themealdb.com/api/json/v1/1/random.php")
 entries = response.json()['meals']
 
 def randomMeal():
-    global meals
     for i in range(len(entries)):
         mealName = entries[i]["strMeal"] # retrieves the name of the meal
         print("Name:", mealName)
