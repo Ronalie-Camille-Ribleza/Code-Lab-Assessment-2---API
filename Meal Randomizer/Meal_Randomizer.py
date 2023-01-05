@@ -3,7 +3,7 @@ import requests
 from PIL import ImageTk, Image
 from ctypes import windll
 
-response = requests.get("https://www.themealdb.com/api/json/v1/1/random.php", stream = True)
+response = requests.get("https://www.themealdb.com/api/json/v1/1/random.php")
 entries = response.json()['meals']
 
 def randomMeal():
