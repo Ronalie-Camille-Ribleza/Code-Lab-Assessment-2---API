@@ -36,10 +36,6 @@ title = tk.Label(text = "Meal Randomizer",
 title.grid(row = 1, column = 0, pady = 20, stick="WE")
 
 # body
-for i in range(len(entries)):
-    if response.status_code == 200:
-        with open("strMealThumb", 'wb') as mealPic:
-            mealPic.write(response.content)
     mealName = entries[i]["strMeal"]
     nameLabel = tk.Label(text = f"Name: {mealName}",
                          bg = "#F9EDCC",
