@@ -19,7 +19,7 @@ def randomMeal():
 
 # user interface
 root = tk.Tk()
-windll.shcore.SetProcessDpiAwareness(1) # sets
+windll.shcore.SetProcessDpiAwareness(1) # allows the text to look clearer
 root.title("Meal Randomizer")
 root.config(padx = 60,
             pady = 60,
@@ -33,12 +33,11 @@ icon = tk.Label(root,
 icon.grid(row = 0, column = 0, pady = 10, stick = "WE")
 title = tk.Label(text = "Meal Randomizer",
                  bg = "#F9EDCC",
-                 fg = "#FD7168",
+                 fg = "#EDAE49",
                  font = ("Ubuntu Bold", 80))
 title.grid(row = 1, column = 0, pady = 20, stick="WE")
 
 # body
-for i in range(len(entries)):
     mealName = entries[i]["strMeal"]
     nameLabel = tk.Label(text = f"Name: {mealName}",
                          bg = "#F9EDCC",
