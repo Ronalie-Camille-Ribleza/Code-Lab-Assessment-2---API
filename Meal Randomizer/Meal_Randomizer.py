@@ -18,7 +18,7 @@ def randomMeal():
 
 # user interface
 root = tk.Tk()
-windll.shcore.SetProcessDpiAwareness(1) # sets
+windll.shcore.SetProcessDpiAwareness(1) # allows the text to look clearer
 root.title("Meal Randomizer")
 root.config(padx = 60,
             pady = 60,
