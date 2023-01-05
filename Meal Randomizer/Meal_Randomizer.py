@@ -1,5 +1,6 @@
 import tkinter as tk
 import requests
+from PIL import ImageTk, Image
 from ctypes import windll
 
 response = requests.get("https://www.themealdb.com/api/json/v1/1/random.php", stream = True)
@@ -24,11 +25,16 @@ root.config(padx = 60,
             bg = "#F9EDCC")
 
 # header
+img = ImageTk.PhotoImage(Image.open("bread-128.png"))
+icon = tk.Label(root,
+                image = img,
+                bg = "#F9EDCC")
+icon.grid(row = 0, column = 0, pady = 10, stick = "WE")
 title = tk.Label(text = "Meal Randomizer",
                  bg = "#F9EDCC",
                  fg = "#EDAE49",
                  font = ("Ubuntu Bold", 80))
-title.grid(row = 0, column = 0, pady = 20, stick="WE")
+title.grid(row = 1, column = 0, pady = 20, stick="WE")
 
 # body
 for i in range(len(entries)):
@@ -40,7 +46,7 @@ for i in range(len(entries)):
                          bg = "#F9EDCC",
                          fg = "#610F12",
                          font = ("Ubuntu", 30))
-    nameLabel.grid(row = 1,
+    nameLabel.grid(row = 2,
                    column = 0,
                    stick = "WE")
     mealPlace = entries[i]["strArea"]
@@ -48,7 +54,7 @@ for i in range(len(entries)):
                          bg = "#F9EDCC",
                          fg = "#610F12",
                          font = ("Ubuntu", 30))
-    placeLabel.grid(row = 2,
+    placeLabel.grid(row = 3,
                    column = 0,
                    stick = "WE")
     mealClass = entries[i]["strCategory"]
@@ -56,7 +62,7 @@ for i in range(len(entries)):
                          bg = "#F9EDCC",
                          fg = "#610F12",
                          font = ("Ubuntu", 30))
-    classLabel.grid(row = 3,
+    classLabel.grid(row = 4,
                    column = 0,
                    stick = "WE")
     mealRecipe = entries[i]["strYoutube"]
@@ -64,7 +70,7 @@ for i in range(len(entries)):
                          bg = "#F9EDCC",
                          fg = "#610F12",
                          font = ("Ubuntu", 30))
-    recipeLabel.grid(row = 4,
+    recipeLabel.grid(row = 5,
                    column = 0,
                    stick = "WE")
 
