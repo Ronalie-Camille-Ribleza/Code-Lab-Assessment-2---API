@@ -14,6 +14,8 @@ def randomMeal():
         print("Origin:", mealPlace)
         mealClass = entries[i]["strCategory"] # retrieves the category of the meal
         print("Category:", mealClass)
+        mealRecipe = entries[i]["strYoutube"]
+        print("Recipe:", mealRecipe)
 
 # user interface
 root = tk.Tk()
@@ -69,4 +71,6 @@ title.grid(row = 1, column = 0, pady = 20, stick="WE")
                    column = 0,
                    stick = "WE")
 
+root.resizable(0, 0)
+randomMeal()
 root.mainloop() # retains the screen until the program is closed
